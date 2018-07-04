@@ -49,9 +49,9 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 	  democlient\bin\demo
 	  
 2 Building a multi-module Java 9 project using the maven - jar and - dependency plugin 
-	
-	2.1. Create a toolchains.xml in user_home/.m2 for example:
-	
+
+2.1. Create a toolchains.xml in user_home/.m2 for example:
+
 	'''xml	
 	<toolchains>
 	  <toolchain>
@@ -85,10 +85,9 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 	    </configuration>
 	  </toolchain>
 	</toolchains>
-	'''	
+	'''xml	
 	
-	2.2 Add profiles to invoke the JDK from command line with resp.
-	
+2.2 Add profiles to invoke the JDK from command line with resp.
 	mvn clean install -P java9
 	mvn clean install -P java10
 	mvn clean install -P java11
@@ -135,24 +134,24 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 	    </properties>
 	  </profile>
 	</profiles>
-	''' 
-	
-	1. From the project root Java_Module_Maven_Demo
-		mvn clean install package
-	2. Execute
-		java -p target\jars -m com.vijfhart.cursus.democlient/com.vijfhart.cursus.democlient.Main
+	'''xml 
+
+1. From the project root Java_Module_Maven_Demo
+	mvn clean install package
+2. Execute
+	java -p target\jars -m com.vijfhart.cursus.democlient/com.vijfhart.cursus.democlient.Main
 	  
 	
 Experimental. Only to produce jmods and jlink image. Intermodular dependecies not supported yet.
 	
-3 Building a multi-module Java 9 project with the jmod plugin 
-	
-	3.1 From the project root Java_Module_Demo_JMod
-	  	mvn clean install package
-	
-	3.2 Check
-	  	dir com.vijfhart.cursus.demo/target/jmods
-	  	dir com.vijfhart.cursus.democlient/target/jmods
+3 Building a multi-module Java 9 project with the jmod plugin
+
+3.1 From the project root Java_Module_Demo_JMod
+	mvn clean install package
+
+3.2 Check
+	dir com.vijfhart.cursus.demo/target/jmods
+	dir com.vijfhart.cursus.democlient/target/jmods
 	 
 	 
 4 Building a multi-module Java 9 project with the jmod and jlink plugin (intermodular dependencies not supported yet)
