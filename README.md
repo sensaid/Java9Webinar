@@ -7,11 +7,11 @@ The examples demonstrate migrating a Java 8 project to Java 9 and beyond.
 3. Building a multi-module Java 9 project with the jmod plugin (intermodular dependecies not supported yet)
 4. Building a multi-module Java 9 project with the jmod and jlink plugin (intermodular dependencies not supported yet)
 
-It is advised to take the 2nd project as a basis since the first option is too much typing (not DRY) and third third and fourth option 
+It is advised to take the 2nd project as a basis since the first option is too much typing (not DRY) and the third and fourth option 
 are still using the experimental JMod and JLink plugin who don't support inter-module dependencies. Their use is decribed in https://dzone.com/articles/jdk9-howto-create-a-java-run-time-image-with-maven
 	
 
-**Building a multi module project by hand**
+**1. Building a multi module project by hand**
 	
 **1.1. From the project root Java_Module_Demo**
 	
@@ -51,7 +51,7 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
   	democlient\bin\demo
 	  
 
-**Building a multi-module Java 9 project using the maven - jar and - dependency plugin** 
+**2. Building a multi-module Java 9 project using the maven - jar and - dependency plugin** 
 
 **2.1. Create a toolchains.xml in user_home/.m2 for example:**
 
@@ -145,13 +145,14 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 **2.4. Execute**
 
   	java -p target\jars -m com.vijfhart.cursus.democlient/com.vijfhart.cursus.democlient.Main
-	  
+	 
+	 
 	
 
 **Experimental. Only to produce jmods and jlink image. Intermodular dependecies not supported yet.**
 	
 
-**Building a multi-module Java 9 project with the jmod plugin**
+**3. Building a multi-module Java 9 project with the jmod plugin**
 
 
 **3.1 From the project root Java_Module_Demo_JMod**
@@ -163,9 +164,10 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 
   	dir com.vijfhart.cursus.demo/target/jmods
   	dir com.vijfhart.cursus.democlient/target/jmods
+	
+	
 	 
-	 
-**Building a multi-module Java 9 project with the jmod and jlink plugin (intermodular dependencies not supported yet)**
+**4. Building a multi-module Java 9 project with the jmod and jlink plugin (intermodular dependencies not supported yet)**
 	
 **4.1 From the project root Java_Module_Demo_JLink**
 
@@ -175,11 +177,17 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 
   	dir com.vijfhart.cursus.jlink\target
 	
-**4.3 Unzip**
+**4.3 View disk size**
   
-  	jar -xvf com.vijfhart.cursus.jlink\target\com.vijfhart.cursus.jlink-1.0-SNAPSHOT.zip
+  	04-07-2018  22:39    <DIR>          .
+	04-07-2018  22:39    <DIR>          ..
+	04-07-2018  22:39    	13.385.137 com.vijfhart.cursus.jlink-1.0-SNAPSHOT.zip
+	04-07-2018  22:39    <DIR>          maven-jlink
+               1 File(s)     13.385.137 bytes
+               3 Dir(s)  103.889.059.840 bytes free
 	
 **4.4 Execute**
 
-  	<TODO>
+  	com.vijfhart.cursus.jlink\target\maven-jlink\bin\java com.vijfhart.cursus.democlient.Main
+
 
