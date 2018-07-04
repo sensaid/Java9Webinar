@@ -15,40 +15,40 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 	
 **1.1. From the project root Java_Module_Demo**
 	
-  javac -d mods --module-source-path src 
-    src/com.vijfhart.cursus.demo/module-info.java 
-    src/com.vijfhart.cursus.demo/com/vijfhart/cursus/demo/Demo.java 
-    src/com.vijfhart.cursus.democlient/module-info.java 
-    src/com.vijfhart.cursus.democlient/com/vijfhart/cursus/democlient/Main.java
+  	javac -d mods --module-source-path src 
+    	  src/com.vijfhart.cursus.demo/module-info.java 
+    	  src/com.vijfhart.cursus.demo/com/vijfhart/cursus/demo/Demo.java 
+    	  src/com.vijfhart.cursus.democlient/module-info.java 
+    	  src/com.vijfhart.cursus.democlient/com/vijfhart/cursus/democlient/Main.java
 	
 **1.2. Create JAR files**
 	
-  jar -cf target\demo.jar -C mods\com.vijfhart.cursus.demo .
-  jar -cfe target\democlient.jar com.vijfhart.cursus.democlient.Main -C mods\com.vijfhart.cursus.democlient .
+  	jar -cf target\demo.jar -C mods\com.vijfhart.cursus.demo .
+  	jar -cfe target\democlient.jar com.vijfhart.cursus.democlient.Main -C mods\com.vijfhart.cursus.democlient .
 	
 **1.3. Execute**
 	
-  java --module-path target\demo.jar;target\democlient.jar --module com.vijfhart.cursus.democlient
+  	java --module-path target\demo.jar;target\democlient.jar --module com.vijfhart.cursus.democlient
 	
 **1.4. Linking to custom JRE**
 	
-  jmod create --class-path target\demo.jar jmods\demo.jmod
-  jmod create --class-path target\democlient.jar jmods\democlient.jmod
+  	jmod create --class-path target\demo.jar jmods\demo.jmod
+  	jmod create --class-path target\democlient.jar jmods\democlient.jmod
 	
 **1.5. Check jmods**
 
-  jmod describe jmods\demo.jmod
-  jmod describe jmods\democlient.jmod
+  	jmod describe jmods\demo.jmod
+  	jmod describe jmods\democlient.jmod
 	
 **1.6. Use jlink**
 	
-  jlink --module-path "%JAVA_HOME%\jmods;jmods" 
-    --add-modules com.vijfhart.cursus.demo,com.vijfhart.cursus.democlient 
-    --launcher demo=com.vijfhart.cursus.democlient --output democlient
+  	jlink --module-path "%JAVA_HOME%\jmods;jmods" 
+    	  --add-modules com.vijfhart.cursus.demo,com.vijfhart.cursus.democlient 
+    	  --launcher demo=com.vijfhart.cursus.democlient --output democlient
 	
 **1.7. Execute**
 	
-  democlient\bin\demo
+  	democlient\bin\demo
 	  
 
 **Building a multi-module Java 9 project using the maven - jar and - dependency plugin** 
@@ -91,9 +91,9 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 	
 **2.2 Add profiles to invoke the JDK from command line with resp.**
 
-  mvn clean install -P java9
-  mvn clean install -P java10
-  mvn clean install -P java11
+  	mvn clean install -P java9
+  	mvn clean install -P java10
+  	mvn clean install -P java11
 	  
 	<profiles>
 	  <profile>
@@ -140,11 +140,11 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 
 **2.3. From the project root Java_Module_Maven_Demo**
 
-  mvn clean install package
+  	mvn clean install package
 
 **2.4. Execute**
 
-  java -p target\jars -m com.vijfhart.cursus.democlient/com.vijfhart.cursus.democlient.Main
+  	java -p target\jars -m com.vijfhart.cursus.democlient/com.vijfhart.cursus.democlient.Main
 	  
 	
 
@@ -156,30 +156,30 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 
 **3.1 From the project root Java_Module_Demo_JMod**
 
-  mvn clean install package
+  	mvn clean install package
 
 
 **3.2 Check**
 
-  dir com.vijfhart.cursus.demo/target/jmods
-  dir com.vijfhart.cursus.democlient/target/jmods
+  	dir com.vijfhart.cursus.demo/target/jmods
+  	dir com.vijfhart.cursus.democlient/target/jmods
 	 
 	 
 **Building a multi-module Java 9 project with the jmod and jlink plugin (intermodular dependencies not supported yet)**
 	
 **4.1 From the project root Java_Module_Demo_JLink**
 
-  mvn clean install package
+  	mvn clean install package
 	
 **4.2 Check**
 
-  dir com.vijfhart.cursus.jlink\target
+  	dir com.vijfhart.cursus.jlink\target
 	
 **4.3 Unzip**
   
-  jar -xvf com.vijfhart.cursus.jlink\target\com.vijfhart.cursus.jlink-1.0-SNAPSHOT.zip
+  	jar -xvf com.vijfhart.cursus.jlink\target\com.vijfhart.cursus.jlink-1.0-SNAPSHOT.zip
 	
 **4.4 Execute**
 
-  <TODO>
+  	<TODO>
 
