@@ -1,6 +1,6 @@
-**Migration Migraine**
+**Java 9 Webinar**
 	
-The examples demonstrate migrating a Java 8 project to Java 9 and beyond. 
+The examples demonstrate migrating a Java multi module project to Java 9 and beyond. 
 
 1. Building a multi-module Java 9 project by hand 
 2. Building a multi-module Java 9 project using the maven jar and maven dependencies plugin
@@ -30,7 +30,7 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 	
   	java --module-path target\demo.jar;target\democlient.jar --module com.vijfhart.cursus.democlient
 	
-**1.4. Linking to custom JRE**
+**1.4. Create jmod files**
 	
   	jmod create --class-path target\demo.jar jmods\demo.jmod
   	jmod create --class-path target\democlient.jar jmods\democlient.jmod
@@ -40,11 +40,13 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
   	jmod describe jmods\demo.jmod
   	jmod describe jmods\democlient.jmod
 	
-**1.6. Use jlink**
+**1.6. Use jlink to link a custom JRE**
 	
-  	jlink --module-path "%JAVA_HOME%\jmods;jmods" 
+  	jlink 
+	  --module-path "%JAVA_HOME%\jmods;jmods" 
     	  --add-modules com.vijfhart.cursus.demo,com.vijfhart.cursus.democlient 
-    	  --launcher demo=com.vijfhart.cursus.democlient --output democlient
+    	  --launcher demo=com.vijfhart.cursus.democlient 
+	  --output democlient
 	
 **1.7. Execute**
 	
@@ -91,9 +93,9 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 	
 **2.2 Add profiles to invoke the JDK from command line with resp.**
 
-  	mvn clean install -P java9
-  	mvn clean install -P java10
-  	mvn clean install -P java11
+  	mvn clean package -P java9
+  	mvn clean package -P java10
+  	mvn clean package -P java11
 	  
 	<profiles>
 	  <profile>
@@ -129,13 +131,13 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 	    </activation>
 	    <properties>
 	      <maven.compiler.source>1.11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
-		<maven.compiler.release>11</maven.compiler.release>
-		<jdk.vendor>openjdk</jdk.vendor>
-		<jdk.version>11</jdk.version>
-	      </properties>
-	    </profile>
-	  </profiles>
+	      <maven.compiler.target>11</maven.compiler.target>
+	      <maven.compiler.release>11</maven.compiler.release>
+	      <jdk.vendor>openjdk</jdk.vendor>
+	      <jdk.version>11</jdk.version>
+	    </properties>
+	  </profile>
+	</profiles>
  
 
 **2.3. From the project root Java_Module_Maven_Demo**
