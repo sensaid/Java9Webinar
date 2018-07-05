@@ -1,7 +1,7 @@
 package com.vijfhart.cursus.democlient;
 
 public class Main {
-  public String getMessage() {
-    return "Hello Module World!";
+  public static void main(String [] args) {
+    System.out.println("Hello Module World!");
   }
 }

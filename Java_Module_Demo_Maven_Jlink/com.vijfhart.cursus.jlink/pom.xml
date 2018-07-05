@@ -14,20 +14,20 @@
 	<artifactId>com.vijfhart.cursus.jlink</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jlink</packaging>
-		
+
 	<dependencies>
 		<dependency>
-		<groupId>com.vijfhart.cursus</groupId>
-		<artifactId>com.vijfhart.cursus.demo</artifactId>
-		<version>1.0-SNAPSHOT</version>
+			<groupId>com.vijfhart.cursus</groupId>
+			<artifactId>com.vijfhart.cursus.demo</artifactId>
+			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-		<groupId>com.vijfhart.cursus</groupId>
-		<artifactId>com.vijfhart.cursus.democlient</artifactId>
-		<version>1.0-SNAPSHOT</version>
+			<groupId>com.vijfhart.cursus</groupId>
+			<artifactId>com.vijfhart.cursus.democlient</artifactId>
+			<version>1.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
-		
+
 	<build>
 
 	</build>

@@ -54,7 +54,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-toolchains-plugin</artifactId>
-					<executions>
+				<executions>
 					<execution>
                         <?m2e ignore ?>
 						<goals>
@@ -65,50 +65,51 @@
 				<configuration>
 					<toolchains>
 						<jdk>
-							<version>1.9</version>
+							<version>9</version>
 							<vendor>oracle</vendor>
 						</jdk>
 					</toolchains>
 				</configuration>
 			</plugin>
 			<plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jmod-plugin</artifactId>
-        <version>3.0.0-alpha-1</version>
-    <extensions>true</extensions> 
-		<configuration>
-				<mainClass>com.vijfhart.cursus.democlient.Main</mainClass>
-        </configuration> 
-      </plugin> 
-	  <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jlink-plugin</artifactId>
-        <version>3.0.0-alpha-1</version>
-        <extensions>true</extensions>
-        <configuration>
-		  <executions>
-			  <execution>
-			  		<id>make-image</id>
-					<goals>
-						<goal>jlink</goal>
-					</goals>
-					<phase>package</phase>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jmod-plugin</artifactId>
+				<version>3.0.0-alpha-1</version>
+				<extensions>true</extensions>
+				<configuration>
+					<mainClass>com.vijfhart.cursus.democlient.Main</mainClass>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jlink-plugin</artifactId>
+				<version>3.0.0-alpha-1</version>
+				<extensions>true</extensions>
+				<configuration>
+					<executions>
+						<execution>
+							<id>make-image</id>
+							<goals>
+								<goal>jlink</goal>
+							</goals>
+							<phase>package</phase>
+						</execution>
+					</executions>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>3.0.0-M2</version>
+				<executions>
+					<!-- Currently turned off enforcer cause we are using SNAPSHOT versions 
+						of plugin which are by default forbidden by the inherited enforcer rules. -->
+					<execution>
+						<id>enforce-maven</id>
+						<phase>UNKNOWN</phase>
 					</execution>
-			 </executions>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-		<version>3.0.0-M2</version>
-        <executions>
-          <!-- Currently turned off enforcer cause we are using SNAPSHOT versions of plugin which are by default forbidden by the inherited enforcer rules. -->
-          <execution>
-            <id>enforce-maven</id>
-            <phase>UNKNOWN</phase>
-          </execution>
-        </executions>
-      </plugin>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>
