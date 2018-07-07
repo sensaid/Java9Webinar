@@ -42,11 +42,11 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 	
 **1.6. Use jlink to link a custom JRE**
 	
-  	jlink
-	--module-path "%JAVA_HOME%\jmods;jmods" 
-	--add-modules com.vijfhart.cursus.demo,com.vijfhart.cursus.democlient 
-	--launcher demo=com.vijfhart.cursus.democlient 
-	--output democlient
+	jlink
+		--module-path "%JAVA_HOME%\jmods;jmods" 
+		--add-modules com.vijfhart.cursus.demo,com.vijfhart.cursus.democlient 
+		--launcher demo=com.vijfhart.cursus.democlient 
+		--output democlient
 	
 **1.7. Execute**
 	
