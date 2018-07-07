@@ -16,7 +16,7 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 **1.1. From the project root Java_Module_Demo**
 	
   	javac -d mods --module-source-path src 
-    	  src/com.vijfhart.cursus.demo/module-info.java 
+		src/com.vijfhart.cursus.demo/module-info.java 
     	  src/com.vijfhart.cursus.demo/com/vijfhart/cursus/demo/Demo.java 
     	  src/com.vijfhart.cursus.democlient/module-info.java 
     	  src/com.vijfhart.cursus.democlient/com/vijfhart/cursus/democlient/Main.java
