@@ -16,10 +16,10 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 **1.1. From the project root Java_Module_Demo**
 	
   	javac -d mods --module-source-path src 
-		src/com.vijfhart.cursus.demo/module-info.java 
-    	  src/com.vijfhart.cursus.demo/com/vijfhart/cursus/demo/Demo.java 
-    	  src/com.vijfhart.cursus.democlient/module-info.java 
-    	  src/com.vijfhart.cursus.democlient/com/vijfhart/cursus/democlient/Main.java
+		src/com.vijfhart.cursus.demo/module-info.java
+		src/com.vijfhart.cursus.demo/com/vijfhart/cursus/demo/Demo.java
+		src/com.vijfhart.cursus.democlient/module-info.java
+		src/com.vijfhart.cursus.democlient/com/vijfhart/cursus/democlient/Main.java
 	
 **1.2. Create JAR files**
 	
@@ -42,11 +42,11 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 	
 **1.6. Use jlink to link a custom JRE**
 	
-  	jlink 
-	  --module-path "%JAVA_HOME%\jmods;jmods" 
-    	  --add-modules com.vijfhart.cursus.demo,com.vijfhart.cursus.democlient 
-    	  --launcher demo=com.vijfhart.cursus.democlient 
-	  --output democlient
+  	jlink
+	--module-path "%JAVA_HOME%\jmods;jmods" 
+	--add-modules com.vijfhart.cursus.demo,com.vijfhart.cursus.democlient 
+	--launcher demo=com.vijfhart.cursus.democlient 
+	--output democlient
 	
 **1.7. Execute**
 	
