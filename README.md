@@ -138,13 +138,29 @@ are still using the experimental JMod and JLink plugin who don't support inter-m
 	    </properties>
 	  </profile>
 	</profiles>
+	
  
+**2.3 The Maven compiler plugin uses an old version of asm.jar incompatible with Java10 or 11. To force a newer version, add this 	 
+  dependency to the compiler plugin.
 
-**2.3. From the project root Java_Module_Maven_Demo**
+	<plugin>
+  	  <groupId>org.apache.maven.plugins</groupId>
+  	  <artifactId>maven-compiler-plugin</artifactId>
+  	  <dependencies>
+    	    <dependency>
+      	      <groupId>org.ow2.asm</groupId>
+      	      <artifactId>asm</artifactId>
+      	      <version>6.2</version>
+    	    </dependency>
+  	  </dependencies>
+	</plugin>
+
+
+**2.4. From the project root Java_Module_Maven_Demo**
 
   	mvn clean install package
 
-**2.4. Execute**
+**2.5. Execute**
 
   	java -p target\jars -m com.vijfhart.cursus.democlient/com.vijfhart.cursus.democlient.Main
 	 
